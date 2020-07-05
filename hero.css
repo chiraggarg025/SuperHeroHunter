@@ -1,0 +1,43 @@
+/* Background */
+body{
+    background-image: url(superhero_background.jpg);
+    background-position:center;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    /* backgroub */
+    /* background-position-y: -70vh; */
+    background-size: cover;
+}
+/*container for image and data */
+.container{
+    display: flex;
+    /* text-align: center; */
+    align-items: center;
+    justify-content: space-evenly;
+}
+/* Hero image */
+.card{
+
+    display: inline-block;
+    /* margin: 3%; */
+    margin-top: 0px;
+}
+.jumbotron{
+    display: inline-block;
+    width: 60%;
+    color: white;
+    background-color: rgba(0,0,0,0.8);
+    margin-top: 1%;
+}
+.jumbotron h1{
+    font-size: 4rem;
+}
+.details{
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    border-bottom: 1px solid grey;
+    border-bottom-width: 80%;
+    border-radius: 25px;
+}

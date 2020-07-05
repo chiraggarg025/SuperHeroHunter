@@ -1,0 +1,51 @@
+/* Background */
+body{
+    background-image: url(superhero_background.jpg);
+    background-position:center;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    /* backgroub */
+    background-size: cover;
+}
+/* Container with searchBar */
+.container{
+    text-align: center;
+    margin-top: 10%;
+    color: white;
+    background-color:rgba(0,0,0,0.7);
+    /* max-height: 70vh; */
+    
+}
+
+.container h1{
+    font-weight: 600;
+}
+/* Search bar */
+.input-group input{
+    font-size: 1.2rem;
+    width: 40%;
+
+}
+button{
+    margin-left: 1%;
+}
+/* Styling for list items and list */
+#auto-complete{
+    color: black;
+    z-index: 1;
+    position: relative;
+    top: 0;
+    margin-top: -1.5%;
+    
+}
+#auto-complete li{
+    width: 20vw;
+    cursor: pointer;
+    /* border-radius: 5px; */
+}
+#auto-complete-container{
+    max-height: 30vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+}
