@@ -122,6 +122,7 @@ function addToFavourite(){
         image: heroImage.url
     }
     // accessing and pushing data from and to local storage
+    
     var storedNames = JSON.parse(localStorage.getItem("names") || "[]");
     
     if(storedNames==null){
