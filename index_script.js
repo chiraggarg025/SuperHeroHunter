@@ -2,7 +2,7 @@
 document.getElementById('hero-name').onkeyup=getData;
 
 //hero id
-let heroId;
+let heroId=0;
 // function to get data
 function getData(){
 
@@ -19,7 +19,7 @@ function getData(){
 
         if(names==null){
             clearList();
-            console.log("not found")
+            console.log('not found!')
         }else{
             for(var i of names){
                 // creating individual list item and appending it
@@ -31,6 +31,8 @@ function getData(){
                     heroId=this.id;
                     document.getElementById('hero-name').value=this.innerText;
                     clearList();
+                    // brings the focus to input
+                    document.getElementById('hero-name').focus();
                     return;
                 })
                 var ul = document.getElementById('auto-complete').appendChild(li);
@@ -43,6 +45,19 @@ function getData(){
     xhrRequest.send();
     
 }
+// handling enter key event
+
+document.getElementById('hero-name').addEventListener('keydown',function(ev){
+
+    if(ev.keyCode==13){
+
+        if(heroId==0){
+            alert('No hero found! Try selecting the hero from the list');
+        }else{
+        showHero();
+        }
+    }
+});
 
 // Function to clear the list items from list
 function clearList(){
@@ -58,11 +73,17 @@ document.getElementById('btn-search').addEventListener('click',showHero);
 function showHero(){
     var name = document.getElementById('hero-name').value;
     if(name==""){
-        alert("Enter the name to be searched")
+        alert("Enter the name to be searched");
+    }else if(heroId==0){
+        alert('No hero found! Try selecting the hero from the list');
     }else{
+
             window.location.assign('superhero.html?id='+heroId);
         
     }
     // console.log(hero);
 }
-
+// on clicking my favourite button
+document.getElementById('btn-favourite').addEventListener('click',function(){
+    window.open('favourite.html');
+})
