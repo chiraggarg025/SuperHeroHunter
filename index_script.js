@@ -78,12 +78,12 @@ function showHero(){
         alert('No hero found! Try selecting the hero from the list');
     }else{
 
-            window.location.assign('superhero.html?id='+heroId);
+            window.open('superhero.html?id='+heroId,'blank');
         
     }
     // console.log(hero);
 }
 // on clicking my favourite button
 document.getElementById('btn-favourite').addEventListener('click',function(){
-    window.open('favourite.html');
+    window.location.assign('favourite.html');
 })
