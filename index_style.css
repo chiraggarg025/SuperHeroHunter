@@ -38,6 +38,7 @@ button{
     margin-top: -1.5%;
     
 }
+/* li of autosuggest */
 #auto-complete li{
     width: 25vw;
     cursor: pointer;
@@ -49,6 +50,7 @@ button{
     overflow-y: auto;
     
 }
+/* media query for responsive design */
 @media screen and (max-width: 600px) {
     
     .input-group input{

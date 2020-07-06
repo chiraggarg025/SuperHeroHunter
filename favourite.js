@@ -1,6 +1,7 @@
-// 
-// addCards();
+// getting fata from local storage
 var storedNames = JSON.parse(localStorage.getItem("names")||"[]");
+
+// function to create individual cards
 function createCards(data){
     // card body
     var parent = document.createElement('div');
@@ -51,14 +52,11 @@ function createCards(data){
     remove.addEventListener('click',function(ev){
         console.log(storedNames);
         var id = this.id;
-        parentId= document.getElementById(id).parentElement.parentElement.id;
-        removeHero(storedNames,'id',id,parentId);
-        // console.log(storedNames);
+        removeHero(storedNames,'id',id);
     })
     child.appendChild(remove);
     parent.appendChild(child);
     
-    // remove.innerText=' Remove';
     
     //Appending child to container
     document.getElementById('cards-container').appendChild(parent);
@@ -66,17 +64,16 @@ function createCards(data){
 
 }
 // loop to add cards 
-// function addCards(){
 
     for(let i=0;i<storedNames.length;i++){
         createCards(storedNames[i]);
      }
-// }
+
 
 
 
 // remove a super hero
-function removeHero(arr, attr, value,child){
+function removeHero(arr, attr, value){
     console.log(value);
     console.log(parent);
     var i = arr.length;
@@ -91,15 +88,10 @@ function removeHero(arr, attr, value,child){
         window.localStorage.removeItem("names");
     }
     window.localStorage.setItem("names", JSON.stringify(arr));
-    // return arr;
-    // var deleteChild = document.getElementById(child);
-    // document.getElementById('cards-container').removeChild(deleteChild);
     document.getElementById('cards-container').innerHTML="";
+    // addind cards back after removing
     for(let i=0;i<storedNames.length;i++){
         createCards(storedNames[i]);
      }
-
-    // addCards();
 }
-document.getElementById('remove')
-console.log(storedNames);
+

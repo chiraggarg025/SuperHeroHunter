@@ -48,11 +48,8 @@ function biography(bio){
         var p = document.createElement('p');
         p.innerText=`${key}: ${value}`;
         p.style.textTransform='capitalize'
-        // p.classList.add('details')
         document.getElementById('occupation').appendChild(p);
-        // console.log(`${key}: ${value}`);
     }
-    // document.getElementById('occupation').innerText='Occupation : '+occupation;
 
 }
 //function to show other names of a hero
@@ -124,6 +121,7 @@ function addToFavourite(){
         name: heroName,
         image: heroImage.url
     }
+    // accessing and pushing data from and to local storage
     var storedNames = JSON.parse(localStorage.getItem("names") || "[]");
     
     if(storedNames==null){
